@@ -1,0 +1,46 @@
+#include<iostream>
+#include<cstdlib>
+#include<ctime>
+#include<algorithm>
+using namespace std;
+
+int main(){
+    srand(time(0));
+    int machinenumber=rand()%100+1;
+    int guessnumber;
+    int maxAttempts=5;
+    int attempts=0;
+    bool won = false;
+
+    cout<<"____________Welcome to the number guessing game____________"<<endl;
+    cout<<"                                                           "<<endl;
+    cout<<"Choose the number between 1 to 100"<<endl;
+    cout<<"You have "<<maxAttempts<<" attemps.Good Luck!"<<endl;
+
+    while(attempts<maxAttempts){
+        attempts++;
+
+        cout<<"\nAttemps "<<attempts<<" of "<<maxAttempts<<endl;
+        cout<<"Enter your guess: ";
+        cin>>guessnumber;
+       
+        if(guessnumber>machinenumber){
+            cout<<"To high! Try Again.\n";
+        }else if(guessnumber<machinenumber){
+            cout<<"To low! Try Again.\n";
+        }else{
+            cout<<"Correct! The number was "<<machinenumber<<"."<<"\n";
+            cout<<"You won in "<<attempts<<" Attemp(s)!"<<endl;
+            won=true;
+            break;
+        }
+        if(attempts<maxAttempts){
+            cout<<"Attempts left: "<<(maxAttempts-attempts)<<endl;
+        }
+    }
+    if(!won){
+        cout<<"\nGame Over! The number was "<<machinenumber<<"."<<endl;
+    }
+    return 0;
+    
+}
