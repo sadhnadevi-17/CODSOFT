@@ -1,0 +1,42 @@
+#include<iostream>
+using namespace std;
+int main(){
+    double n1, n2;
+    int choice;
+    
+    cout<<"_____________________________Simple Calculator________________________________"<<endl<<endl;
+    cout<<"Choices are given as: "<<endl;
+    cout<<"1. Addition(+)"<<endl;
+    cout<<"2. Subtraction(-)"<<endl;
+    cout<<"3. Multiplication(*)"<<endl;
+    cout<<"4. Division(/)"<<endl<<endl;
+
+    cout<<"Enter your choice from above: ";
+    cin>>choice;
+    cout<<"Enter 1st number: ";
+    cin>>n1;
+    cout<<"Enter 2nd number: ";
+    cin>>n2;
+    
+    switch(choice){
+        case 1:
+          cout<<"Result: "<<(n1+n2)<<endl;
+          break;
+        case 2:
+           cout<<"Result: "<<(n1-n2)<<endl;
+           break;
+        case 3:
+          cout<<"Result: "<<(n1*n2)<<endl;
+          break;
+        case 4:
+          if(n2 == 0)
+            cout<<"Error: Division by zero!"<<endl;
+          else 
+            cout<<"Result: "<<(n1/n2)<<endl;
+             break; 
+        default:
+            cout<<"Invalid choice!"<<endl;
+    }
+
+    return 0;  
+}
